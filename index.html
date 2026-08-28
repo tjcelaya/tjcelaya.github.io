@@ -6,21 +6,26 @@
 <title>Tomas Celaya</title>
 <meta name="description" content="Tomas Celaya — Senior Software Engineer, Infrastructure &amp; Platform. Portland, OR.">
 <style>
-/* the "slightest modern niceties": readable measure, sane line-height, dark mode. that's it. */
-:root { color-scheme: light dark; }
-body { font-family: Georgia, "Times New Roman", Times, serif; font-size: 18px; line-height: 1.5;
-       max-width: 72ch; margin: 2em auto; padding: 0 1em; }
-h1 { font-size: 2em; margin: 0 0 .1em; }
-h2 { font-size: 1.4em; margin: 1.6em 0 .5em; }
-h3 { font-size: 1.1em; margin: 1.4em 0 .1em; }
-h3 i { font-weight: normal; }
+:root { color-scheme: light dark; --line: rgba(128,128,128,.35); --mut: rgba(128,128,128,.95); --acc: #2a5db0; }
+@media (prefers-color-scheme: dark) { :root { --acc: #8cb4ff; } }
+body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.55;
+       max-width: 74ch; margin: 3.5em auto 4em; padding: 0 1.25em; }
+h1 { font-size: 2.2em; margin: 0 0 .15em; letter-spacing: -.01em; }
+h2 { font-size: 1.35em; margin: 0 0 1em; }
+h3 { font-size: 1.1em; margin: 0 0 .1em; }
+h3 i { font-weight: normal; color: var(--acc); }
 p, ul, dl { margin: .5em 0; }
-.meta { font-family: monospace; font-size: .85em; margin-top: 0; opacity: .75; }
-dt { font-weight: bold; margin-top: .6em; }
-dd { margin: 0 0 0 2em; }
-hr { margin: 2em 0; }
-a:visited { color: #551a8b; }
-@media (prefers-color-scheme: dark) { a { color: #8cb4ff; } a:visited { color: #c29fff; } }
+li { margin: .3em 0; }
+a { color: var(--acc); } a:visited { color: #6d4fb8; } @media (prefers-color-scheme: dark) { a:visited { color: #c29fff; } }
+nav a { margin-right: 1.1em; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
+.meta { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .8em; color: var(--mut); margin: 0 0 .5em; }
+.role { padding: 1.4em 0; border-top: 1px solid var(--line); }
+.role:first-of-type { border-top: 0; padding-top: 0; }
+.role ul { margin: .4em 0 0; padding-left: 1.3em; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: .7em 1.5em; }
+dt { font-weight: 600; } dd { margin: 0; }
+@media (max-width: 600px) { dl { grid-template-columns: 1fr; gap: .2em; } dd { margin-bottom: .8em; } }
 </style>
 </head>
 <body>
@@ -29,13 +34,13 @@ a:visited { color: #551a8b; }
 <p><b>Senior Software Engineer &mdash; Infrastructure &amp; Platform</b><br>
 Portland, OR</p>
 
-<p>
-<a href="https://github.com/tjcelaya">GitHub</a> |
-<a href="https://linkedin.com/in/tomas-celaya-64522a23">LinkedIn</a> |
-<a href="https://docs.google.com/document/d/e/2PACX-1vScps-91KD_eCT9ciVqi2uQSiS_f80FA8PX9-FE6YCcSjlvwYu0FuVOwCzPGM-rZqZtB5nFx-wEUXg5/pub">CV</a> |
-<a href="https://blog.tjcelaya.com">Blog</a> |
+<nav>
+<a href="https://github.com/tjcelaya">GitHub</a>
+<a href="https://linkedin.com/in/tomas-celaya-64522a23">LinkedIn</a>
+<a href="https://docs.google.com/document/d/e/2PACX-1vScps-91KD_eCT9ciVqi2uQSiS_f80FA8PX9-FE6YCcSjlvwYu0FuVOwCzPGM-rZqZtB5nFx-wEUXg5/pub">CV</a>
+<a href="https://blog.tjcelaya.com">Blog</a>
 <a href="mailto:tjcelaya@gmail.com">Email</a>
-</p>
+</nav>
 
 <hr>
 
@@ -45,6 +50,7 @@ Portland, OR</p>
 
 <h2>Experience</h2>
 
+<div class="role">
 <h3>Solutions Architect, <i>Joyent, Inc. (contract via MindSource, Inc.)</i></h3>
 <p class=meta>Apr 2024 – Present &middot; Terraform · Kubernetes · Grafana · Jsonnet · GitHub Actions · AWS · Python</p>
 <ul><li>Migrated Grafana dashboards and alerting for the platform's products to Jsonnet definitions-as-code, deployed through GitHub Actions to 7 environments; eliminated hand-edited dashboard drift.</li>
@@ -53,42 +59,54 @@ Portland, OR</p>
 <li>Owned customer performance and functionality escalations end-to-end: root-caused with support and engineering, then drove fixes and feature prioritization into the roadmap.</li>
 <li>Maintained product documentation and front-page site infrastructure.</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Independent Contractor</h3>
 <p class=meta>Jan 2022 – Dec 2023 &middot; Go · JavaScript · Ansible · Consul · Docker · systemd</p>
 <ul><li>Built an agent for automatic metrics and error reporting from systemd services, with configurable false-positive suppression and proactive alerting suggestions.</li>
 <li>Designed and deployed an offline-first journal/calendar web app with optional sync to a cloud calendar.</li>
 <li>Deployed landing page and product catalog for a custom online shop. Additional contracts under NDA.</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Software Engineer, <i>Joyent, Inc.</i></h3>
 <p class=meta>May 2019 – Dec 2021 &middot; Go · Docker · Ansible · AWS · HashiCorp Vault · iSCSI</p>
 <ul><li>Architected and implemented the RESTful provisioning API for a multi-AZ pool of software-defined block-storage clusters exposed over iSCSI, serving both VM disks and dedicated block devices.</li>
 <li>Led a small team that designed, built, and operated internal secrets management on HashiCorp Vault, then extended it into a public-facing certificate-management service with automatic ELB integration.</li>
 <li>Produced architecture documentation and workflow diagrams used to align vendors, clients, and cross-language engineering teams; shipped fixes and enhancements to vendor clients and tooling to accelerate integration.</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Software Engineer, Backend, <i>Zero Financial, Inc.</i></h3>
 <p class=meta>Aug 2018 – Feb 2019 &middot; Python · Django · Java · PostgreSQL · BigQuery · Kubernetes · Helm · Terraform</p>
 <ul><li>Designed and implemented the analytics pipeline on BigQuery with Stitch Data ETL, after prototyping a custom ETL path.</li>
 <li>Consolidated microservice deployments into unified Helm charts, making full staging environments reproducible.</li>
 <li>Added Sentry error reporting to the core financial gateway (jPOS-based ISO 8583 processor).</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Product Engineer, <i>Joyent, Inc.</i></h3>
 <p class=meta>May 2017 – Aug 2018 &middot; Java · Maven · TestNG/JUnit · Triton · Manta · Docker · Jenkins · Terraform</p>
 <ul><li>Led development of the java-manta client SDK: new features, mission-critical bug fixes, and associated libraries, owning the full lifecycle from feature requests through QA coordination and artifact publishing.</li>
 <li>Fixed correctness issues in streaming client-side encryption by making cipher-state updates transactional.</li>
 <li>Established unit-testing patterns and expanded coverage; designed and automated black-box/white-box performance testing of client stacks with Terraform-provisioned environments.</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Software Engineer, Backend, <i>Stitch Labs</i></h3>
 <p class=meta>Mar 2016 – Apr 2017 &middot; PHP/Laravel · Go · Scala · Python · Vitess · Kubernetes · Apache Spark</p>
 <ul><li>Enabled a gradual two-week sharded-database migration by implementing dynamic database-connection routing across both primary codebases, with zero customer-facing downtime.</li>
 <li>Co-designed an internal event-publishing framework powering webhooks for external partner integrations.</li>
 <li>Maintained and enhanced the Spark-based ETL pipeline behind the sales-forecasting feature; championed functional/integration testing for critical code paths.</li>
 </ul>
+</div>
 
+<div class="role">
 <h3>Earlier</h3>
 <p class=meta>2012 – 2016</p>
 <ul><li><strong>Release Engineer</strong>, Boku (2016) — weekly clustered-Java microservice releases and release automation.</li>
@@ -96,6 +114,7 @@ Portland, OR</p>
 <li><strong>IT / web development</strong>, FSU Dept. of Biological Science (2013–2014).</li>
 <li><strong>Web Developer intern</strong>, Federated Travel (2012).</li>
 </ul>
+</div>
 
 <hr>
 
