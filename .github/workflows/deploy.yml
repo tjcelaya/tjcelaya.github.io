@@ -1,0 +1,21 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  droplet:
+    # GitHub Pages deploys main on its own; this job mirrors index.html to tjcelaya.com.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ssh setup
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: copy site
+        run: scp index.html root@24.199.102.45:/var/www/html/index.html
+      - name: verify
+        run: curl -sSf -o /dev/null -w "https://tjcelaya.com -> %{http_code}\n" https://tjcelaya.com
