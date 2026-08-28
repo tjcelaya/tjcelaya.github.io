@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tomas Celaya</title>
+<meta name="description" content="Tomas Celaya — Senior Software Engineer, Infrastructure &amp; Platform. Portland, OR.">
+<style>
+/* the "slightest modern niceties": readable measure, sane line-height, dark mode. that's it. */
+:root { color-scheme: light dark; }
+body { font-family: Georgia, "Times New Roman", Times, serif; font-size: 18px; line-height: 1.5;
+       max-width: 72ch; margin: 2em auto; padding: 0 1em; }
+h1 { font-size: 2em; margin: 0 0 .1em; }
+h2 { font-size: 1.4em; margin: 1.6em 0 .5em; }
+h3 { font-size: 1.1em; margin: 1.4em 0 .1em; }
+h3 i { font-weight: normal; }
+p, ul, dl { margin: .5em 0; }
+.meta { font-family: monospace; font-size: .85em; margin-top: 0; opacity: .75; }
+dt { font-weight: bold; margin-top: .6em; }
+dd { margin: 0 0 0 2em; }
+hr { margin: 2em 0; }
+a:visited { color: #551a8b; }
+@media (prefers-color-scheme: dark) { a { color: #8cb4ff; } a:visited { color: #c29fff; } }
+</style>
+</head>
+<body>
+
+<h1>Tomas Celaya</h1>
+<p><b>Senior Software Engineer &mdash; Infrastructure &amp; Platform</b><br>
+Portland, OR</p>
+
+<p>
+<a href="https://github.com/tjcelaya">GitHub</a> |
+<a href="https://linkedin.com/in/tomas-celaya-64522a23">LinkedIn</a> |
+<a href="https://docs.google.com/document/d/e/2PACX-1vScps-91KD_eCT9ciVqi2uQSiS_f80FA8PX9-FE6YCcSjlvwYu0FuVOwCzPGM-rZqZtB5nFx-wEUXg5/pub">CV</a> |
+<a href="https://blog.tjcelaya.com">Blog</a> |
+<a href="mailto:tjcelaya@gmail.com">Email</a>
+</p>
+
+<hr>
+
+<p>Infrastructure-focused software engineer with 10+ years across platform engineering, software-defined storage, and cloud operations. Built a block-storage provisioning API and led a secrets/certificate-management service in Go at Joyent; currently own observability-as-code, Terraform/Kubernetes reference deployments, and customer escalations for the same platform as a returning contractor. Looking for a senior platform / infrastructure / SRE role where reliability and developer tooling are the product.</p>
+
+<hr>
+
+<h2>Experience</h2>
+
+<h3>Solutions Architect, <i>Joyent, Inc. (contract via MindSource, Inc.)</i></h3>
+<p class=meta>Apr 2024 – Present &middot; Terraform · Kubernetes · Grafana · Jsonnet · GitHub Actions · AWS · Python</p>
+<ul><li>Migrated Grafana dashboards and alerting for the platform's products to Jsonnet definitions-as-code, deployed through GitHub Actions to 7 environments; eliminated hand-edited dashboard drift.</li>
+<li>Built Terraform + Kubernetes + Spark reference deployments that analytics customers used to complete an AWS region migration.</li>
+<li>Expanded canary-test coverage and run frequency for existing products, turning canary data into actionable signals for development teams.</li>
+<li>Owned customer performance and functionality escalations end-to-end: root-caused with support and engineering, then drove fixes and feature prioritization into the roadmap.</li>
+<li>Maintained product documentation and front-page site infrastructure.</li>
+</ul>
+
+<h3>Independent Contractor</h3>
+<p class=meta>Jan 2022 – Dec 2023 &middot; Go · JavaScript · Ansible · Consul · Docker · systemd</p>
+<ul><li>Built an agent for automatic metrics and error reporting from systemd services, with configurable false-positive suppression and proactive alerting suggestions.</li>
+<li>Designed and deployed an offline-first journal/calendar web app with optional sync to a cloud calendar.</li>
+<li>Deployed landing page and product catalog for a custom online shop. Additional contracts under NDA.</li>
+</ul>
+
+<h3>Software Engineer, <i>Joyent, Inc.</i></h3>
+<p class=meta>May 2019 – Dec 2021 &middot; Go · Docker · Ansible · AWS · HashiCorp Vault · iSCSI</p>
+<ul><li>Architected and implemented the RESTful provisioning API for a multi-AZ pool of software-defined block-storage clusters exposed over iSCSI, serving both VM disks and dedicated block devices.</li>
+<li>Led a small team that designed, built, and operated internal secrets management on HashiCorp Vault, then extended it into a public-facing certificate-management service with automatic ELB integration.</li>
+<li>Produced architecture documentation and workflow diagrams used to align vendors, clients, and cross-language engineering teams; shipped fixes and enhancements to vendor clients and tooling to accelerate integration.</li>
+</ul>
+
+<h3>Software Engineer, Backend, <i>Zero Financial, Inc.</i></h3>
+<p class=meta>Aug 2018 – Feb 2019 &middot; Python · Django · Java · PostgreSQL · BigQuery · Kubernetes · Helm · Terraform</p>
+<ul><li>Designed and implemented the analytics pipeline on BigQuery with Stitch Data ETL, after prototyping a custom ETL path.</li>
+<li>Consolidated microservice deployments into unified Helm charts, making full staging environments reproducible.</li>
+<li>Added Sentry error reporting to the core financial gateway (jPOS-based ISO 8583 processor).</li>
+</ul>
+
+<h3>Product Engineer, <i>Joyent, Inc.</i></h3>
+<p class=meta>May 2017 – Aug 2018 &middot; Java · Maven · TestNG/JUnit · Triton · Manta · Docker · Jenkins · Terraform</p>
+<ul><li>Led development of the java-manta client SDK: new features, mission-critical bug fixes, and associated libraries, owning the full lifecycle from feature requests through QA coordination and artifact publishing.</li>
+<li>Fixed correctness issues in streaming client-side encryption by making cipher-state updates transactional.</li>
+<li>Established unit-testing patterns and expanded coverage; designed and automated black-box/white-box performance testing of client stacks with Terraform-provisioned environments.</li>
+</ul>
+
+<h3>Software Engineer, Backend, <i>Stitch Labs</i></h3>
+<p class=meta>Mar 2016 – Apr 2017 &middot; PHP/Laravel · Go · Scala · Python · Vitess · Kubernetes · Apache Spark</p>
+<ul><li>Enabled a gradual two-week sharded-database migration by implementing dynamic database-connection routing across both primary codebases, with zero customer-facing downtime.</li>
+<li>Co-designed an internal event-publishing framework powering webhooks for external partner integrations.</li>
+<li>Maintained and enhanced the Spark-based ETL pipeline behind the sales-forecasting feature; championed functional/integration testing for critical code paths.</li>
+</ul>
+
+<h3>Earlier</h3>
+<p class=meta>2012 – 2016</p>
+<ul><li><strong>Release Engineer</strong>, Boku (2016) — weekly clustered-Java microservice releases and release automation.</li>
+<li><strong>Web Developer</strong>, Ynot Marketing (2014–2015) — Laravel/Angular lead-management platform.</li>
+<li><strong>IT / web development</strong>, FSU Dept. of Biological Science (2013–2014).</li>
+<li><strong>Web Developer intern</strong>, Federated Travel (2012).</li>
+</ul>
+
+<hr>
+
+<h2>Skills</h2>
+
+<dl>
+<dt>Languages</dt><dd>Go, Python, Java, JavaScript/Node.js, Bash, SQL</dd>
+<dt>Infrastructure</dt><dd>Kubernetes, Helm, Docker, Terraform, Ansible, HashiCorp Vault &amp; Consul, systemd, Linux, iSCSI / software-defined block storage</dd>
+<dt>Cloud</dt><dd>AWS (EC2, VPC, IAM, EBS, RDS, ELB), GCP (GKE, BigQuery, CloudSQL, Compute Engine)</dd>
+<dt>Observability &amp; CI/CD</dt><dd>Grafana, Jsonnet, PagerDuty, GitHub Actions, Jenkins, Sentry</dd>
+<dt>Data</dt><dd>PostgreSQL, MySQL, Redis, Cassandra, BigQuery, Apache Spark, Airflow</dd>
+<dt>Practices</dt><dd>API design, requirements gathering, entity modeling, database and query optimization, technical documentation, incident management</dd>
+</dl>
+
+<hr>
+
+<h2>Education</h2>
+<p><strong>Florida State University</strong> — B.S. Computer Science, minor in Information Technology · 2014</p>
+<p>Upsilon Pi Epsilon (CS honor society)</p>
+
+<hr>
+
+<p><small>Last updated 2026-08-28. <a href="https://md.tjcelaya.com">md</a> &middot; <a href="https://hp.tjcelaya.com">hp</a></small></p>
+
+</body>
+</html>
